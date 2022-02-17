@@ -3,17 +3,19 @@
 > react-scripts test "--coverage"
 
 PASS src/HtmlCss.test.tsx
+PASS src/functions.test.ts
 PASS src/text.test.tsx
 PASS src/App.test.tsx
-----------|---------|----------|---------|---------|-------------------
-File      | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
-----------|---------|----------|---------|---------|-------------------
-All files |   66.66 |      100 |   66.66 |   66.66 |                   
- App.tsx  |   66.66 |      100 |   66.66 |   66.66 | 30                
-----------|---------|----------|---------|---------|-------------------
+--------------|---------|----------|---------|---------|-------------------
+File          | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+--------------|---------|----------|---------|---------|-------------------
+All files     |      96 |      100 |    87.5 |      96 |                   
+ App.tsx      |   66.66 |      100 |   66.66 |   66.66 | 30                
+ functions.ts |     100 |      100 |     100 |     100 |                   
+--------------|---------|----------|---------|---------|-------------------
 
-Test Suites: 3 passed, 3 total
-Tests:       9 passed, 9 total
+Test Suites: 4 passed, 4 total
+Tests:       14 passed, 14 total
 Snapshots:   0 total
-Time:        3.666 s
+Time:        4.441 s
 Ran all test suites.
