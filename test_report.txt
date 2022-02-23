@@ -3,21 +3,26 @@
 > react-scripts test "--coverage"
 
 PASS src/arrays.test.ts
+PASS src/objects.test.ts
 PASS src/HtmlCss.test.tsx
 PASS src/functions.test.ts
 PASS src/text.test.tsx
 PASS src/App.test.tsx
---------------|---------|----------|---------|---------|-------------------
-File          | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
---------------|---------|----------|---------|---------|-------------------
-All files     |   96.62 |    95.34 |   96.77 |   96.51 |                   
- App.tsx      |   66.66 |      100 |   66.66 |   66.66 | 27                
- arrays.ts    |   96.87 |    93.54 |     100 |   96.72 | 36,53             
- functions.ts |     100 |      100 |     100 |     100 |                   
---------------|---------|----------|---------|---------|-------------------
+----------------|---------|----------|---------|---------|-------------------
+File            | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+----------------|---------|----------|---------|---------|-------------------
+All files       |    97.5 |    96.07 |   97.61 |   97.43 |                   
+ src            |    97.5 |    96.07 |   97.61 |   97.43 |                   
+  App.tsx       |   66.66 |      100 |   66.66 |   66.66 | 27                
+  arrays.ts     |   96.87 |    93.54 |     100 |   96.72 | 36,53             
+  functions.ts  |     100 |      100 |     100 |     100 |                   
+  objects.ts    |     100 |      100 |     100 |     100 |                   
+ src/interfaces |       0 |        0 |       0 |       0 |                   
+  question.ts   |       0 |        0 |       0 |       0 |                   
+----------------|---------|----------|---------|---------|-------------------
 
-Test Suites: 5 passed, 5 total
-Tests:       23 passed, 23 total
+Test Suites: 6 passed, 6 total
+Tests:       33 passed, 33 total
 Snapshots:   0 total
-Time:        3.544 s
+Time:        4.423 s
 Ran all test suites.
