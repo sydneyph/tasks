@@ -14,7 +14,7 @@ export function GiveAttempts(): JSX.Element {
     }
 
     function addRequests() {
-        setNumberAttempts(requestedAttempts);
+        setNumberAttempts(requestedAttempts + numberAttempts);
     }
 
     function subtractRequests() {
