@@ -16,13 +16,13 @@ const BLUES = [
 ];
 
 export function ChangeColor(): JSX.Element {
-    const [currentColor, setColor] = useState<string>(BLUES[0]);
+    const [currentColor, setColor] = useState<string>(BLUES[3]);
 
     return (
         <div>
             <h3>Change Color</h3>
             <div>
-                <div>
+                <div data-testid="colored-box">
                     The current color is{" "}
                     <span
                         style={{ backgroundColor: currentColor, color: "grey" }}
