@@ -22,7 +22,10 @@ export function ChangeColor(): JSX.Element {
         <div>
             <h3>Change Color</h3>
             <div>
-                <div data-testid="colored-box">
+                <div
+                    data-testid="colored-box"
+                    style={{ backgroundColor: currentColor }}
+                >
                     The current color is{" "}
                     <span
                         style={{ backgroundColor: currentColor, color: "grey" }}
