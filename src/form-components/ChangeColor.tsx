@@ -2,21 +2,34 @@ import React, { useState } from "react";
 import { Form } from "react-bootstrap";
 
 const BLUES = [
-    "Aqua",
-    "Aliceblue",
     "Azure",
+    "Aliceblue",
     "Aquamarine",
+    "Aqua",
+    "LightBlue",
     "Blue",
+    "MediumBlue",
     "DarkBlue",
-    "CornflowerBlue",
     "MidnightBlue",
+    "PaleTurquoise",
+    "Turquoise",
+    "MediumTurquoise",
     "DarkTurquoise",
+    "Teal",
+    "CornflowerBlue",
     "DeepSkyBlue",
-    "DodgerBlue"
+    "DodgerBlue",
+    "LightCyan",
+    "LightSkyBlue",
+    "SkyBlue",
+    "LightSteelBlue",
+    "SteelBlue",
+    "PowderBlue",
+    "RoyalBlue"
 ];
 
 export function ChangeColor(): JSX.Element {
-    const [currentColor, setColor] = useState<string>(BLUES[3]);
+    const [currentColor, setColor] = useState<string>(BLUES[0]);
 
     return (
         <div>
