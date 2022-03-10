@@ -30,16 +30,16 @@ export function EditMode(): JSX.Element {
                 />
             </div>
             <div>
-                {!isEditing ? (
-                    <div>
-                        <span>{name}</span>
-                        {isStudent ? " is a student" : " is not a student"}
-                    </div>
-                ) : (
+                {isEditing ? (
                     <Form.Group controlId="formPersonName">
                         <Form.Label>Name:</Form.Label>
                         <Form.Control value={name} onChange={updateName} />
                     </Form.Group>
+                ) : (
+                    <div>
+                        {name}{" "}
+                        {isStudent ? " is a student" : " is not a student"}
+                    </div>
                 )}
             </div>
         </div>
