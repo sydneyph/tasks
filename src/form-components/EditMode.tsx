@@ -31,10 +31,19 @@ export function EditMode(): JSX.Element {
             </div>
             <div>
                 {isEditing ? (
-                    <Form.Group controlId="formPersonName">
-                        <Form.Label>Name:</Form.Label>
-                        <Form.Control value={name} onChange={updateName} />
-                    </Form.Group>
+                    <div>
+                        <Form.Group controlId="formPersonName">
+                            <Form.Label>Name:</Form.Label>
+                            <Form.Control value={name} onChange={updateName} />
+                        </Form.Group>
+                        <Form.Check
+                            type="switch"
+                            id="is-a-studnet"
+                            label="Is A Student"
+                            checked={isStudent}
+                            onChange={() => setIsStudent(!isStudent)}
+                        ></Form.Check>
+                    </div>
                 ) : (
                     <div>
                         {name}{" "}
