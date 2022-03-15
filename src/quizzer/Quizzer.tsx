@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
 // importing this to handle everything about questions and answers in the quizzer
-import "./interfaces/answer";
-import "./interfaces/question";
-import "./objects";
+// import "./interfaces/answer";
+// import "./interfaces/question";
+// import "./objects";
 
 export function Quizzer(): JSX.Element {
     // this section holds a lot of function declarations and constants for the Quizzer Mode function
