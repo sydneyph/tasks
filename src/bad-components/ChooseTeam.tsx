@@ -16,7 +16,14 @@ export function ChooseTeam(): JSX.Element {
 
     function chooseMember(option: string) {
         const newTeam = [...team, option];
-        setTeam(newTeam);
+        // testing to see if the text is already on the page
+        // putting in this comment to try and do my thing
+        const memberPresent = team.filter(
+            (name: string): boolean => option === name
+        );
+        if (memberPresent.length === 0) {
+            setTeam(newTeam);
+        }
         if (allOptions.length === -100) {
             setAllOptions([]);
         }
