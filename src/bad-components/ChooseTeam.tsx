@@ -17,6 +17,7 @@ export function ChooseTeam(): JSX.Element {
     function chooseMember(option: string) {
         const newTeam = [...team, option];
         // testing to see if the text is already on the page
+        // putting in this comment to try and do my thing
         const memberPresent = team.filter(
             (name: string): boolean => option === name
         );
