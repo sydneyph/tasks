@@ -1,5 +1,9 @@
 import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
+// importing this to handle everything about questions and answers in the quizzer
+import "./interfaces/answer";
+import "./interfaces/question";
+import "./objects";
 
 export function Quizzer(): JSX.Element {
     // this section holds a lot of function declarations and constants for the Quizzer Mode function
@@ -22,6 +26,11 @@ export function Quizzer(): JSX.Element {
             <div>
                 <Button>Quizzer Mode</Button>
                 <div>establish QuizzerMode</div>
+                {/** Placing a map here that constins a list of questions which wil generate into Quizzer mode layout */}
+                {/** Each of these will print in a little thing that satisfies above element and constin a button that says view quiz*/}
+                {/** On Click, viewQuiz button will show steps listed in bullet 3 and will have an option to start the quiz, end quiz (no mulligan, not worrying about attempts)*/}
+                {/** on start Quiz, the multiple choice radio buttons. Short answer has text box. These get handeled in the map. When the right answer is selected, green check. YOu cannot view other quizzes at this time. Start quiz will grab another button*/}
+                {/** on stopQuiz, you will be shown brough back to the view quiz stage and the points you earned will be viewable. from here you can choose to view a different quiz*/}
             </div>
         );
     }
@@ -39,6 +48,9 @@ export function Quizzer(): JSX.Element {
             <div>
                 <Button>Editing Mode</Button>
                 <div>establish Editing mode</div>
+                {/** Placing a map here that constins a list of questions which wil generate into Quizzer mode layout */}
+                {/** You can select delete quiz by pressing button. you can edit quiz by selecting a button*/}
+                {/** You can play around with setting of individual questions as explained above using various buttons and interfaces*/}
             </div>
         );
     }
