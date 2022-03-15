@@ -15,11 +15,8 @@ import { GiveAttempts } from "./form-components/GiveAttempts";
 import { EditMode } from "./form-components/EditMode";
 import { MultipleChoiceQuestion } from "./form-components/MultipleChoiceQuestion";
 import { ChangeColor } from "./form-components/ChangeColor";
-<<<<<<< HEAD
-import { TwoDice } from "./components/TwoDice";
-=======
 import { Quizzer } from "./quizzer/Quizzer";
->>>>>>> upstream/task-quizzer
+import { TwoDice } from "./components/TwoDice";
 
 function App(): JSX.Element {
     return (

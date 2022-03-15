@@ -1,3 +1,4 @@
+import { findSourceMap } from "module";
 import React, { useState } from "react";
 import { Button, Row, Col } from "react-bootstrap";
 
@@ -15,8 +16,13 @@ export function ChooseTeam(): JSX.Element {
     const [team, setTeam] = useState<string[]>([]);
 
     function chooseMember(option: string) {
-        const newTeam = [...team, option];
-        setTeam(newTeam);
+        const optionDupe = team.filter(
+            (name: string): boolean => name === option
+        );
+        if (optionDupe.length === 0) {
+            const newTeam = [...team, option];
+            setTeam(newTeam);
+        }
         if (allOptions.length === -100) {
             setAllOptions([]);
         }
