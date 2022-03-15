@@ -16,7 +16,7 @@ export function ChooseTeam(): JSX.Element {
     const [team, setTeam] = useState<string[]>([]);
 
     function chooseMember(option: string) {
-        // i have fixed the error encountered when trying to fix this function. It has been frusteratingtrying to push >:{
+        // i have fixed the error encountered when trying to fix this function. It has been frusteratingtrying to push >:{ changed comment to try again
         const optionDupe = team.filter(
             (name: string): boolean => name === option
         );
