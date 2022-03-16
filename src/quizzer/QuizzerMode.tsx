@@ -54,44 +54,58 @@ export function QuizzerMode(): JSX.Element {
             </div>
         );
     }
+
     function viewQuiz(): JSX.Element {
         // this functions prints more info about the quiz including the questions names, bodies and points
-        const currentQuizArr = listOfQuizzes.filter((currentQuiz: Quiz): boolean => currentQuiz.name !== selectedQuizName)
-        const currentQuizQuestions= currentQuizArr[0].quizQuestions;
+        const currentQuizArr = listOfQuizzes.filter(
+            (currentQuiz: Quiz): boolean =>
+                currentQuiz.name !== selectedQuizName
+        );
+        const currentQuizQuestions = currentQuizArr[0].quizQuestions;
         return (
             <div>
-            <div data-testid="colored-box" style={{ backgroundColor: "azure" }}>
+                <Button onClick={takingCurrentQuiz}>Start Quiz</Button>
                 {currentQuizQuestions.map((currentQuestion: Question) => (
-                    <div
-                        key={currentQuestion.name}
-                        name={currentQuestion.name}
-                        id={"question-" + currentQuestion.name}
-                        label={
-                            <span
-                                style={{
-                                    backgroundColor: "azure",
-                                    color: "grey"
-                                }}
-                            >
-                                {currentQuestion}
-                            </span>
-                        }
-                    />
-                    <div key={option} style={{ marginBottom: "4px" }}>
-                                Add{" "}
-                                <Button
-                                    onClick={() => chooseMember(option)}
-                                    size="sm"
-                                >
-                                    {option}
-                                </Button>
-                            </div>
-                <span style={{ backgroundColor: "azure", color: "grey" }}>
-                    {"I am calling View Quiz"}
-                </span>
+                    <div key={currentQuestion.name}>
+                        Question ID: {currentQuestion.id} Question Body:
+                        {" ...... "}
+                        {currentQuestion.name} Question Points:{" ...... "}
+                        {currentQuestion.points}
+                    </div>
+                ))}
+            </div>
         );
-    </div>
     }
+
+    function takingCurrentQuiz(): JSX.Element {
+        console.log("inside takingCurrentQuiz");
+        return <div>inside takingCurrentQuiz</div>;
+    }
+
+    // <div>
+    //         <div data-testid="colored-box" style={{ backgroundColor: "azure" }}>
+    //             {currentQuizQuestions.map((currentQuestion: Question) => (
+    //                 <Form.Label
+    //                     key={currentQuestion.name}
+    //                     name={currentQuestion.name}
+    //                     id={"question-" + currentQuestion.name}
+    //                     label={
+    //                         <span
+    //                             style={{
+    //                                 backgroundColor: "azure",
+    //                                 color: "grey"
+    //                             }}
+    //                         >
+    //                             {currentQuestion}
+    //                         </span>
+    //                     }
+    //                 />
+    //             <span style={{ backgroundColor: "azure", color: "grey" }}>
+    //                 {"I am calling View Quiz"}
+    //             </span>
+    //     );
+    // </div>
+
     /* This element will allow to access the quizzer portion of the site
         - Users can see the list of Quizzes. Will include the Title, description and how many questions the quiz has
         - Once a quiz has been selected, A user can look at questions in the quiz including question name, body and points. 
