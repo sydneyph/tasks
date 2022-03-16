@@ -37,11 +37,11 @@ export function QuizzerMode(): JSX.Element {
                                     color: "grey"
                                 }}
                             >
-                                {"Quiz title: "} {currentQuiz.name}{" "}
-                                {"        Description: "}
-                                {currentQuiz.description}{" "}
-                                {"    Points you can earn: "}{" "}
-                                {currentQuiz.pointsWorth}
+                                {"Quiz title: "} {currentQuiz.name} {" ...... "}
+                                {"Description: "} {currentQuiz.description}
+                                {" ...... "}
+                                {"Number of Questions : "}{" "}
+                                {currentQuiz.numberOfQuestions}
                                 {selectedQuizName === currentQuiz.name
                                     ? viewQuiz()
                                     : " "}
@@ -67,10 +67,9 @@ export function QuizzerMode(): JSX.Element {
                 <Button onClick={takingCurrentQuiz}>Start Quiz</Button>
                 {currentQuizQuestions.map((currentQuestion: Question) => (
                     <div key={currentQuestion.name}>
-                        Question ID: {currentQuestion.id} Question Body:
-                        {" ...... "}
-                        {currentQuestion.name} Question Points:{" ...... "}
-                        {currentQuestion.points}
+                        Question: {currentQuestion.name} {" ...... "}
+                        Question Type: {currentQuestion.body} {" ...... "}
+                        Question Points: {" ...... "} {currentQuestion.points}
                     </div>
                 ))}
             </div>
@@ -78,33 +77,11 @@ export function QuizzerMode(): JSX.Element {
     }
 
     function takingCurrentQuiz(): JSX.Element {
+        // this function is going to create a new layout where we can actually take the quiz
+        //need to make sure correct answering tools show up or multiple choice and short answer, have stop button, and points are tallied
         console.log("inside takingCurrentQuiz");
         return <div>inside takingCurrentQuiz</div>;
     }
-
-    // <div>
-    //         <div data-testid="colored-box" style={{ backgroundColor: "azure" }}>
-    //             {currentQuizQuestions.map((currentQuestion: Question) => (
-    //                 <Form.Label
-    //                     key={currentQuestion.name}
-    //                     name={currentQuestion.name}
-    //                     id={"question-" + currentQuestion.name}
-    //                     label={
-    //                         <span
-    //                             style={{
-    //                                 backgroundColor: "azure",
-    //                                 color: "grey"
-    //                             }}
-    //                         >
-    //                             {currentQuestion}
-    //                         </span>
-    //                     }
-    //                 />
-    //             <span style={{ backgroundColor: "azure", color: "grey" }}>
-    //                 {"I am calling View Quiz"}
-    //             </span>
-    //     );
-    // </div>
 
     /* This element will allow to access the quizzer portion of the site
         - Users can see the list of Quizzes. Will include the Title, description and how many questions the quiz has

@@ -12,7 +12,7 @@ export function makeMultipleChoice(
         id: id,
         name: name,
         type: type,
-        body: "",
+        body: "Multiple Choice",
         expected: "",
         options: options,
         points: 1,
@@ -32,7 +32,7 @@ export function makeShortAnswer(
         id: id,
         name: name,
         type: type,
-        body: "",
+        body: "Short Answer",
         expected: "",
         options: [],
         points: 3,
@@ -45,13 +45,13 @@ export function makeShortAnswer(
 export function makeQuiz(
     name: string,
     description: string,
-    pointsWorth: number,
+    numberOfQuestions: number,
     quizQuestions: Question[]
 ): Quiz {
     return {
         name: name,
         description: description,
-        pointsWorth: pointsWorth,
+        numberOfQuestions: quizQuestions.length,
         quizQuestions: quizQuestions
     };
 }

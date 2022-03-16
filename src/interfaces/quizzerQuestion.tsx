@@ -29,7 +29,7 @@ export interface Quiz {
     /** The description of the Quiz*/
     description: string;
     /** Points the Quiz is worth */
-    pointsWorth: number;
+    numberOfQuestions: number;
     /** The list of questions for the quiz */
     quizQuestions: Question[];
 }
