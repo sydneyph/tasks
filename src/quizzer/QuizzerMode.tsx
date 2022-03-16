@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import { makeMultipleChoice, makeQuiz, makeShortAnswer } from "./Questions";
 import { Question, QuestionType, Quiz } from "../interfaces/quizzerQuestion";
-import { updateSourceFile } from "typescript";
+// planning on storing initial quizzes and questions
 import { Quiz1, Quiz2, Quiz3 } from "./OriginalQuizzes";
 
 export function QuizzerMode(): JSX.Element {
@@ -13,9 +13,8 @@ export function QuizzerMode(): JSX.Element {
 
     // functions to print the quizzes out
     function PrintQuizzes(): JSX.Element {
-        // i want this function to print all of the quizzes Titles, descriptions and how many questions the quiz has.
-        // it will also ceate a button for each quiz that will allow you to view the quiz
-        //currentQuiz.name + " Description: " + currentQuiz.description;
+        // This function prints out the title, description and how many questions the quiz has
+        // it also makes check boxes that, when clicked, allows the user to view the quizzes more closely, calling viewQuiz
         return (
             <div>
                 <Form.Label>Your Quizzes</Form.Label>
@@ -57,14 +56,41 @@ export function QuizzerMode(): JSX.Element {
     }
     function viewQuiz(): JSX.Element {
         // this functions prints more info about the quiz including the questions names, bodies and points
+        const currentQuizArr = listOfQuizzes.filter((currentQuiz: Quiz): boolean => currentQuiz.name !== selectedQuizName)
+        const currentQuizQuestions= currentQuizArr[0].quizQuestions;
         return (
+            <div>
             <div data-testid="colored-box" style={{ backgroundColor: "azure" }}>
-                The current color is{" "}
+                {currentQuizQuestions.map((currentQuestion: Question) => (
+                    <div
+                        key={currentQuestion.name}
+                        name={currentQuestion.name}
+                        id={"question-" + currentQuestion.name}
+                        label={
+                            <span
+                                style={{
+                                    backgroundColor: "azure",
+                                    color: "grey"
+                                }}
+                            >
+                                {currentQuestion}
+                            </span>
+                        }
+                    />
+                    <div key={option} style={{ marginBottom: "4px" }}>
+                                Add{" "}
+                                <Button
+                                    onClick={() => chooseMember(option)}
+                                    size="sm"
+                                >
+                                    {option}
+                                </Button>
+                            </div>
                 <span style={{ backgroundColor: "azure", color: "grey" }}>
                     {"I am calling View Quiz"}
                 </span>
-            </div>
         );
+    </div>
     }
     /* This element will allow to access the quizzer portion of the site
         - Users can see the list of Quizzes. Will include the Title, description and how many questions the quiz has
