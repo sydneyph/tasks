@@ -22,3 +22,14 @@ export interface Question {
     /** THe answer to the Quiz */
     answer: string;
 }
+
+export interface Quiz {
+    /** The name of the Quiz */
+    name: string;
+    /** The description of the Quiz*/
+    description: string;
+    /** Points the Quiz is worth */
+    pointsWorth: number;
+    /** The list of questions for the quiz */
+    quizQuestions: Question[];
+}

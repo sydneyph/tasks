@@ -1,15 +1,40 @@
 import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
-import { makeMultipleChoice, makeShortAnswer } from "./Questions";
+import {
+    makeMultipleChoice,
+    makeQuiz,
+    makeShortAnswer,
+    Quiz
+} from "./Questions";
 import { Question, QuestionType } from "../interfaces/quizzerQuestion";
 
 export function QuizzerMode(): JSX.Element {
-    // the intial Quizzes will be stored here
-    const Quiz1 = [
-        makeMultipleChoice(1, "How many Quizzes ", "multiple_choice_question"),
-        makeMultipleChoice(2, "Sydney", "multiple_choice_question", "YEYEY"),
-        makeMultipleChoice(3, "Sydney", "multiple_choice_question", "YEYEY"),
-        makeMultipleChoice(4, "Sydney", "multiple_choice_question", "YEYEY"),
+    // the intial Quizzes will be stored here make into let
+    const Quiz1Questions = [
+        makeMultipleChoice(
+            1,
+            "How many Questions did this Quiz start out with?",
+            "multiple_choice_question",
+            ["a. 1", "b. 3", "c. 5", "d. 7"]
+        ),
+        makeMultipleChoice(2, "What Season is it", "multiple_choice_question", [
+            "summer",
+            "winter",
+            "fall",
+            "spring"
+        ]),
+        makeMultipleChoice(3, "HWhat year is it?", "multiple_choice_question", [
+            "2010",
+            "2020",
+            "2022",
+            "2024"
+        ]),
+        makeMultipleChoice(
+            4,
+            "What is the weirdest word?",
+            "multiple_choice_question",
+            ["YEYEY", "weiurg owe", "wekjb    oew", "askdjfbqkrb"]
+        ),
         makeShortAnswer(
             5,
             "Waht is the Name of the person who created this Quiz",
@@ -17,12 +42,32 @@ export function QuizzerMode(): JSX.Element {
             "Sydney"
         )
     ];
+    // for these, come back and make the points woth be the questions all added up instead of a static value 😁😁😁
+    const Quiz1 = makeQuiz(
+        "First Quiz",
+        " This is the first quiz I made and it tests you on basic facts.",
+        5,
+        Quiz1Questions
+    );
+    // list of all quizzes make into let
+    const listOfQuizzes = [Quiz1];
 
-    const [selectedQuiz, setselectedQuiz] = useState<Question[]>(Quiz1);
+    const [selectedQuiz, updateSelectedQuiz] = useState<Quiz[]>(listOfQuizzes);
 
     // functions to print the quizzes out
-    function PrintQuizzes(question: Question): JSX.Element {
-        return <div>WorkingonPrintQuiz</div>;
+    function PrintQuizzes(): JSX.Element {
+        return (
+            <div>
+                <Form.Label>Your Quizzes</Form.Label>
+                <Form.Label>
+                    {listOfQuizzes.map((currentQuiz: Quiz) => (
+                        <option key={currentQuiz} value={currentQuiz}>
+                            {Quiz.name}
+                        </option>
+                    ))}
+                </Form.Label>
+            </div>
+        );
     }
     function PrintSelectedQuizzes(question: Question): JSX.Element {
         return <div>WorkingonPrintSelectedQuiz</div>;
@@ -38,6 +83,7 @@ export function QuizzerMode(): JSX.Element {
         <div>
             <Button>Quizzer Mode</Button>
             <div>establish QuizzerMode</div>
+            <PrintQuizzes />
             {/** Placing a map here that constins a list of questions which wil generate into Quizzer mode layout */}
             {/** Each of these will print in a little thing that satisfies above element and constin a button that says view quiz*/}
             {/** On Click, viewQuiz button will show steps listed in bullet 3 and will have an option to start the quiz, end quiz (no mulligan, not worrying about attempts)*/}
