@@ -3,52 +3,13 @@ import { Button, Form } from "react-bootstrap";
 import { makeMultipleChoice, makeQuiz, makeShortAnswer } from "./Questions";
 import { Question, QuestionType, Quiz } from "../interfaces/quizzerQuestion";
 import { updateSourceFile } from "typescript";
+import { Quiz1, Quiz2, Quiz3 } from "./OriginalQuizzes";
 
 export function QuizzerMode(): JSX.Element {
-    // the intial Quizzes will be stored here make into let
-    const Quiz1Questions = [
-        makeMultipleChoice(
-            1,
-            "How many Questions did this Quiz start out with?",
-            "multiple_choice_question",
-            ["a. 1", "b. 3", "c. 5", "d. 7"]
-        ),
-        makeMultipleChoice(2, "What Season is it", "multiple_choice_question", [
-            "summer",
-            "winter",
-            "fall",
-            "spring"
-        ]),
-        makeMultipleChoice(3, "HWhat year is it?", "multiple_choice_question", [
-            "2010",
-            "2020",
-            "2022",
-            "2024"
-        ]),
-        makeMultipleChoice(
-            4,
-            "What is the weirdest word?",
-            "multiple_choice_question",
-            ["YEYEY", "weiurg owe", "wekjb    oew", "askdjfbqkrb"]
-        ),
-        makeShortAnswer(
-            5,
-            "Waht is the Name of the person who created this Quiz",
-            "multiple_choice_question",
-            "Sydney"
-        )
-    ];
-    // for these, come back and make the points woth be the questions all added up instead of a static value 😁😁😁
-    const Quiz1 = makeQuiz(
-        "First Quiz",
-        " This is the first quiz I made and it tests you on basic facts.",
-        5,
-        Quiz1Questions
-    );
     // list of all quizzes make into let
-    const listOfQuizzes = [Quiz1, Quiz1, Quiz1, Quiz1];
+    const listOfQuizzes = [Quiz1, Quiz2, Quiz3];
 
-    const [selectedQuiz, updateSelectedQuiz] = useState<Quiz>();
+    const [selectedQuizName, updateSelectedQuizName] = useState<string>();
 
     // functions to print the quizzes out
     function PrintQuizzes(): JSX.Element {
@@ -66,7 +27,9 @@ export function QuizzerMode(): JSX.Element {
                         key={currentQuiz.name}
                         type="radio"
                         name={currentQuiz.name}
-                        onChange={() => updateSelectedQuiz(currentQuiz)}
+                        onChange={(
+                            event: React.ChangeEvent<HTMLInputElement>
+                        ) => updateSelectedQuizName(event.target.value)}
                         id={"current-Quiz-" + currentQuiz.name}
                         label={
                             <span
@@ -80,19 +43,20 @@ export function QuizzerMode(): JSX.Element {
                                 {currentQuiz.description}{" "}
                                 {"    Points you can earn: "}{" "}
                                 {currentQuiz.pointsWorth}
-                                {selectedQuiz === currentQuiz
-                                    ? viewQuiz(currentQuiz)
+                                {selectedQuizName === currentQuiz.name
+                                    ? viewQuiz()
                                     : " "}
                             </span>
                         }
+                        value={currentQuiz.name}
+                        checked={currentQuiz.name === selectedQuizName}
                     />
                 ))}
             </div>
         );
     }
-    function viewQuiz(selectedQuiz: Quiz): JSX.Element {
+    function viewQuiz(): JSX.Element {
         // this functions prints more info about the quiz including the questions names, bodies and points
-        updateSelectedQuiz(selectedQuiz);
         return (
             <div data-testid="colored-box" style={{ backgroundColor: "azure" }}>
                 The current color is{" "}
