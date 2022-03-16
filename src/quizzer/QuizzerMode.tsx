@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import { makeMultipleChoice, makeQuiz, makeShortAnswer } from "./Questions";
 import { Question, QuestionType, Quiz } from "../interfaces/quizzerQuestion";
+import { updateSourceFile } from "typescript";
 
 export function QuizzerMode(): JSX.Element {
     // the intial Quizzes will be stored here make into let
@@ -47,7 +48,7 @@ export function QuizzerMode(): JSX.Element {
     // list of all quizzes make into let
     const listOfQuizzes = [Quiz1, Quiz1, Quiz1, Quiz1];
 
-    const [selectedQuiz, updateSelectedQuiz] = useState<Quiz[]>(listOfQuizzes);
+    const [selectedQuiz, updateSelectedQuiz] = useState<Quiz>();
 
     // functions to print the quizzes out
     function PrintQuizzes(): JSX.Element {
@@ -65,7 +66,7 @@ export function QuizzerMode(): JSX.Element {
                         key={currentQuiz.name}
                         type="radio"
                         name={currentQuiz.name}
-                        onChange={viewQuiz}
+                        onChange={() => updateSelectedQuiz(currentQuiz)}
                         id={"current-Quiz-" + currentQuiz.name}
                         label={
                             <span
@@ -79,6 +80,9 @@ export function QuizzerMode(): JSX.Element {
                                 {currentQuiz.description}{" "}
                                 {"    Points you can earn: "}{" "}
                                 {currentQuiz.pointsWorth}
+                                {selectedQuiz === currentQuiz
+                                    ? viewQuiz(currentQuiz)
+                                    : " "}
                             </span>
                         }
                     />
@@ -86,9 +90,17 @@ export function QuizzerMode(): JSX.Element {
             </div>
         );
     }
-    function viewQuiz(): JSX.Element {
+    function viewQuiz(selectedQuiz: Quiz): JSX.Element {
         // this functions prints more info about the quiz including the questions names, bodies and points
-        return <div>WorkingonPrintSelectedQuiz</div>;
+        updateSelectedQuiz(selectedQuiz);
+        return (
+            <div data-testid="colored-box" style={{ backgroundColor: "azure" }}>
+                The current color is{" "}
+                <span style={{ backgroundColor: "azure", color: "grey" }}>
+                    {"I am calling View Quiz"}
+                </span>
+            </div>
+        );
     }
     /* This element will allow to access the quizzer portion of the site
         - Users can see the list of Quizzes. Will include the Title, description and how many questions the quiz has
@@ -99,7 +111,6 @@ export function QuizzerMode(): JSX.Element {
         */
     return (
         <div>
-            <Button>Quizzer Mode</Button>
             <div>establish QuizzerMode</div>
             <PrintQuizzes />
             {/** Placing a map here that constins a list of questions which wil generate into Quizzer mode layout */}
