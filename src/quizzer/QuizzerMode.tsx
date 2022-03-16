@@ -1,12 +1,7 @@
 import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
-import {
-    makeMultipleChoice,
-    makeQuiz,
-    makeShortAnswer,
-    Quiz
-} from "./Questions";
-import { Question, QuestionType } from "../interfaces/quizzerQuestion";
+import { makeMultipleChoice, makeQuiz, makeShortAnswer } from "./Questions";
+import { Question, QuestionType, Quiz } from "../interfaces/quizzerQuestion";
 
 export function QuizzerMode(): JSX.Element {
     // the intial Quizzes will be stored here make into let
@@ -50,26 +45,49 @@ export function QuizzerMode(): JSX.Element {
         Quiz1Questions
     );
     // list of all quizzes make into let
-    const listOfQuizzes = [Quiz1];
+    const listOfQuizzes = [Quiz1, Quiz1, Quiz1, Quiz1];
 
     const [selectedQuiz, updateSelectedQuiz] = useState<Quiz[]>(listOfQuizzes);
 
     // functions to print the quizzes out
     function PrintQuizzes(): JSX.Element {
+        // i want this function to print all of the quizzes Titles, descriptions and how many questions the quiz has.
+        // it will also ceate a button for each quiz that will allow you to view the quiz
+        //currentQuiz.name + " Description: " + currentQuiz.description;
         return (
             <div>
                 <Form.Label>Your Quizzes</Form.Label>
                 <Form.Label>
-                    {listOfQuizzes.map((currentQuiz: Quiz) => (
-                        <option key={currentQuiz} value={currentQuiz}>
-                            {Quiz.name}
-                        </option>
-                    ))}
+                    Select the Radio Button next to the quiz to view it.
                 </Form.Label>
+                {listOfQuizzes.map((currentQuiz: Quiz) => (
+                    <Form.Check
+                        key={currentQuiz.name}
+                        type="radio"
+                        name={currentQuiz.name}
+                        onChange={viewQuiz}
+                        id={"current-Quiz-" + currentQuiz.name}
+                        label={
+                            <span
+                                style={{
+                                    backgroundColor: "paleturquoise",
+                                    color: "grey"
+                                }}
+                            >
+                                {"Quiz title: "} {currentQuiz.name}{" "}
+                                {"        Description: "}
+                                {currentQuiz.description}{" "}
+                                {"    Points you can earn: "}{" "}
+                                {currentQuiz.pointsWorth}
+                            </span>
+                        }
+                    />
+                ))}
             </div>
         );
     }
-    function PrintSelectedQuizzes(question: Question): JSX.Element {
+    function viewQuiz(): JSX.Element {
+        // this functions prints more info about the quiz including the questions names, bodies and points
         return <div>WorkingonPrintSelectedQuiz</div>;
     }
     /* This element will allow to access the quizzer portion of the site
