@@ -11,6 +11,9 @@ export function QuizzerMode(): JSX.Element {
 
     const [selectedQuizName, updateSelectedQuizName] = useState<string>();
 
+    // this constant determines whether or not the user is actively taking a quiz
+    const [quizActive, setQuizActive] = useState<boolean>(false);
+
     // functions to print the quizzes out
     function PrintQuizzes(): JSX.Element {
         // This function prints out the title, description and how many questions the quiz has
@@ -49,6 +52,8 @@ export function QuizzerMode(): JSX.Element {
                         }
                         value={currentQuiz.name}
                         checked={currentQuiz.name === selectedQuizName}
+                        //our ability to swich quizzes stops if we are currently taking another quiz
+                        disabled={quizActive}
                     />
                 ))}
             </div>
@@ -56,15 +61,33 @@ export function QuizzerMode(): JSX.Element {
     }
 
     function viewQuiz(): JSX.Element {
+        // Handles showing the viewing quiz and the taking quiz
+        return (
+            <div>
+                <div>
+                    {quizActive === true
+                        ? takingCurrentQuiz()
+                        : viewingCurrentQuiz()}
+                </div>
+            </div>
+        );
+    }
+    function viewingCurrentQuiz(): JSX.Element {
         // this functions prints more info about the quiz including the questions names, bodies and points
         const currentQuizArr = listOfQuizzes.filter(
             (currentQuiz: Quiz): boolean =>
                 currentQuiz.name !== selectedQuizName
         );
         const currentQuizQuestions = currentQuizArr[0].quizQuestions;
+
         return (
             <div>
-                <Button onClick={takingCurrentQuiz}>Start Quiz</Button>
+                <Button
+                    onClick={() => setQuizActive(!quizActive)}
+                    disabled={quizActive === true}
+                >
+                    Start Quiz{" "}
+                </Button>
                 {currentQuizQuestions.map((currentQuestion: Question) => (
                     <div key={currentQuestion.name}>
                         Question: {currentQuestion.name} {" ...... "}
@@ -79,8 +102,18 @@ export function QuizzerMode(): JSX.Element {
     function takingCurrentQuiz(): JSX.Element {
         // this function is going to create a new layout where we can actually take the quiz
         //need to make sure correct answering tools show up or multiple choice and short answer, have stop button, and points are tallied
+        //need a button to stop the quiz. will tally points and set quiz active to true
         console.log("inside takingCurrentQuiz");
-        return <div>inside takingCurrentQuiz</div>;
+        return (
+            <div>
+                <Button
+                    onClick={() => setQuizActive(!quizActive)}
+                    disabled={quizActive === false}
+                >
+                    Stop Quiz
+                </Button>
+            </div>
+        );
     }
 
     /* This element will allow to access the quizzer portion of the site
