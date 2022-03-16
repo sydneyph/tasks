@@ -1,6 +1,32 @@
 import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
+import { makeMultipleChoice, makeShortAnswer } from "./Questions";
+import { Question, QuestionType } from "../interfaces/quizzerQuestion";
+
 export function QuizzerMode(): JSX.Element {
+    // the intial Quizzes will be stored here
+    const Quiz1 = [
+        makeMultipleChoice(1, "How many Quizzes ", "multiple_choice_question"),
+        makeMultipleChoice(2, "Sydney", "multiple_choice_question", "YEYEY"),
+        makeMultipleChoice(3, "Sydney", "multiple_choice_question", "YEYEY"),
+        makeMultipleChoice(4, "Sydney", "multiple_choice_question", "YEYEY"),
+        makeShortAnswer(
+            5,
+            "Waht is the Name of the person who created this Quiz",
+            "multiple_choice_question",
+            "Sydney"
+        )
+    ];
+
+    const [selectedQuiz, setselectedQuiz] = useState<Question[]>(Quiz1);
+
+    // functions to print the quizzes out
+    function PrintQuizzes(question: Question): JSX.Element {
+        return <div>WorkingonPrintQuiz</div>;
+    }
+    function PrintSelectedQuizzes(question: Question): JSX.Element {
+        return <div>WorkingonPrintSelectedQuiz</div>;
+    }
     /* This element will allow to access the quizzer portion of the site
         - Users can see the list of Quizzes. Will include the Title, description and how many questions the quiz has
         - Once a quiz has been selected, A user can look at questions in the quiz including question name, body and points. 
