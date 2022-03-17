@@ -21,7 +21,6 @@ export function CheckMultipleChoice({
         <div>
             <div>
                 <Form.Group controlId="userEmotions">
-                    <Form.Label>How do you feel?</Form.Label>
                     <Form.Select value={userAnswer} onChange={updateUserAnswer}>
                         {options.map((answer: string) => (
                             <option key={answer} value={answer}>

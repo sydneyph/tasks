@@ -12,6 +12,9 @@ export function QuizzerMode(): JSX.Element {
 
     const [selectedQuizName, updateSelectedQuizName] = useState<string>();
 
+    //this keeps track of all of the points we have earned
+    const [totalPoints, updateTotalPoints] = useState<number>(0);
+
     // this constant determines whether or not the user is actively taking a quiz
     const [quizActive, setQuizActive] = useState<boolean>(false);
 
@@ -22,6 +25,7 @@ export function QuizzerMode(): JSX.Element {
         return (
             <div>
                 <Form.Label>Your Quizzes</Form.Label>
+                <Form.Label>Total Points: {totalPoints}</Form.Label>
                 <Form.Label>
                     Select the Radio Button next to the quiz to view it.
                 </Form.Label>
@@ -119,7 +123,7 @@ export function QuizzerMode(): JSX.Element {
                     Stop Quiz
                 </Button>
                 {currentQuizQuestions.map((currentQuestion: Question) => (
-                    <div key={currentQuestion.name}>
+                    <div key={currentQuestion.name} style={{ color: "black" }}>
                         Question: {currentQuestion.name} {" ...... "}
                         Question Type: {currentQuestion.body} {" ...... "}
                         Question Points: {" ...... "} {currentQuestion.points}
