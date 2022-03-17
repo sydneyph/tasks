@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Button, Form } from "react-bootstrap";
+import React from "react";
+import { Button } from "react-bootstrap";
 
 export function EditorMode(): JSX.Element {
     /* This element will allow the user to access particular features to edit the site

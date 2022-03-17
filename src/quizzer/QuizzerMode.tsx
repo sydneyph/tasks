@@ -14,6 +14,7 @@ export function QuizzerMode(): JSX.Element {
 
     //this keeps track of all of the points we have earned
     const [totalPoints, updateTotalPoints] = useState<number>(0);
+    updateTotalPoints;
 
     // this constant determines whether or not the user is actively taking a quiz
     const [quizActive, setQuizActive] = useState<boolean>(false);
@@ -46,6 +47,7 @@ export function QuizzerMode(): JSX.Element {
                                     backgroundColor: "paleturquoise",
                                     color: "grey"
                                 }}
+                                data-testid="selected_Quiz"
                             >
                                 {"Quiz title: "} {currentQuiz.name} {" ...... "}
                                 {"Description: "} {currentQuiz.description}
