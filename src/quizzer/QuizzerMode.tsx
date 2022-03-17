@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
-import { Question, QuestionType, Quiz } from "../interfaces/quizzerQuestion";
+import { Question, Quiz } from "../interfaces/quizzerQuestion";
 // planning on storing initial quizzes and questions
 import { Quiz1, Quiz2, Quiz3 } from "./OriginalQuizzes";
 import { CheckMultipleChoice } from "./UpdateMultipleChoice";

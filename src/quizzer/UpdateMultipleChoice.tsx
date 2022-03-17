@@ -19,7 +19,6 @@ export function CheckMultipleChoice({
     }
     return (
         <div>
-            <h3>Multiple Choice Question</h3>
             <div>
                 <Form.Group controlId="userEmotions">
                     <Form.Label>How do you feel?</Form.Label>

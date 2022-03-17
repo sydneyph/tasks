@@ -19,7 +19,6 @@ export function CheckShortAnswer({
     }
     return (
         <div>
-            <h3>Check Answer</h3>
             <Form.Group controlId="CheckAnswer">
                 <Form.Label>Insert Your Short Answer Responce Here:</Form.Label>
                 <Form.Control
