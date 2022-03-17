@@ -5,25 +5,29 @@ export const Quiz1Questions = [
         1,
         "How many Questions did this Quiz start out with?",
         "multiple_choice_question",
-        ["a. 1", "b. 3", "c. 5", "d. 7"]
+        ["a. 1", "b. 3", "c. 5", "d. 7"],
+        "a. 1"
     ),
-    makeMultipleChoice(2, "What Season is it", "multiple_choice_question", [
-        "summer",
-        "winter",
-        "fall",
-        "spring"
-    ]),
-    makeMultipleChoice(3, "HWhat year is it?", "multiple_choice_question", [
-        "2010",
-        "2020",
-        "2022",
+    makeMultipleChoice(
+        2,
+        "What Season is it",
+        "multiple_choice_question",
+        ["summer", "winter", "fall", "spring"],
+        "summer"
+    ),
+    makeMultipleChoice(
+        3,
+        "HWhat year is it?",
+        "multiple_choice_question",
+        ["2010", "2020", "2022", "2024"],
         "2024"
-    ]),
+    ),
     makeMultipleChoice(
         4,
         "What is the weirdest word?",
         "multiple_choice_question",
-        ["YEYEY", "weiurg owe", "wekjb    oew", "askdjfbqkrb"]
+        ["YEYEY", "weiurg owe", "wekjb    oew", "askdjfbqkrb"],
+        "askdjfbqkrb"
     ),
     makeShortAnswer(
         5,

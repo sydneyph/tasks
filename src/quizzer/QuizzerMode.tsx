@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
-import { makeMultipleChoice, makeQuiz, makeShortAnswer } from "./Questions";
 import { Question, QuestionType, Quiz } from "../interfaces/quizzerQuestion";
 // planning on storing initial quizzes and questions
 import { Quiz1, Quiz2, Quiz3 } from "./OriginalQuizzes";
+import { CheckMultipleChoice } from "./UpdateMultipleChoice";
+import { CheckShortAnswer } from "./UpdateShortAnswer";
 
 export function QuizzerMode(): JSX.Element {
     // list of all quizzes make into let
@@ -103,7 +104,12 @@ export function QuizzerMode(): JSX.Element {
         // this function is going to create a new layout where we can actually take the quiz
         //need to make sure correct answering tools show up or multiple choice and short answer, have stop button, and points are tallied
         //need a button to stop the quiz. will tally points and set quiz active to true
-        console.log("inside takingCurrentQuiz");
+        const currentQuizArr = listOfQuizzes.filter(
+            (currentQuiz: Quiz): boolean =>
+                currentQuiz.name !== selectedQuizName
+        );
+        const currentQuizQuestions = currentQuizArr[0].quizQuestions;
+
         return (
             <div>
                 <Button
@@ -112,6 +118,23 @@ export function QuizzerMode(): JSX.Element {
                 >
                     Stop Quiz
                 </Button>
+                {currentQuizQuestions.map((currentQuestion: Question) => (
+                    <div key={currentQuestion.name}>
+                        Question: {currentQuestion.name} {" ...... "}
+                        Question Type: {currentQuestion.body} {" ...... "}
+                        Question Points: {" ...... "} {currentQuestion.points}
+                        {currentQuestion.body === "Multiple Choice" ? (
+                            <CheckMultipleChoice
+                                options={currentQuestion.options}
+                                expectedAnswer={currentQuestion.answer}
+                            ></CheckMultipleChoice>
+                        ) : (
+                            <CheckShortAnswer
+                                expectedAnswer={currentQuestion.answer}
+                            ></CheckShortAnswer>
+                        )}
+                    </div>
+                ))}
             </div>
         );
     }

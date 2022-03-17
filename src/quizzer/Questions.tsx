@@ -6,7 +6,8 @@ export function makeMultipleChoice(
     id: number,
     name: string,
     type: QuestionType,
-    options: string[]
+    options: string[],
+    answer: string
 ): Question {
     return {
         id: id,
@@ -17,7 +18,7 @@ export function makeMultipleChoice(
         options: options,
         points: 1,
         published: true,
-        answer: ""
+        answer: answer
     };
 }
 
