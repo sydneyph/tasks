@@ -18,10 +18,274 @@ PASS src/components/CycleHoliday.test.tsx
 PASS src/form-components/GiveAttempts.test.tsx
 PASS src/form-components/ChangeColor.test.tsx
 PASS src/components/Counter.test.tsx
+PASS src/quizzer/Quizzer.test.tsx
+FAIL src/quizzer/QuizzerMode.test.tsx
+  ● Quizzer Tests › Swiching the Quizzes displays the Displayed Quiz
+
+    TestingLibraryElementError: Unable to find an element by: [data-testid="current_Quiz"]
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<body>[39m
+      [36m<div>[39m
+        [36m<div>[39m
+          [36m<h3>[39m
+            [0mQuizzer[0m
+          [36m</h3>[39m
+          [36m<div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"form-check form-switch"[39m
+            [36m>[39m
+              [36m<input[39m
+                [33mclass[39m=[32m"form-check-input"[39m
+                [33mid[39m=[32m"edit-mode-or-quizzer-mode"[39m
+                [33mtype[39m=[32m"checkbox"[39m
+              [36m/>[39m
+              [36m<label[39m
+                [33mclass[39m=[32m"form-check-label"[39m
+                [33mfor[39m=[32m"edit-mode-or-quizzer-mode"[39m
+                [33mtitle[39m=[32m""[39m
+              [36m>[39m
+                [0mSwap Modes[0m
+              [36m</label>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+          [36m<div>[39m
+            [36m<div>[39m
+              [36m<div>[39m
+                [0mQuizzer Mode[0m
+              [36m</div>[39m
+              [36m<div>[39m
+                [36m<label[39m
+                  [33mclass[39m=[32m"form-label"[39m
+                [36m>[39m
+                  [0mYour Quizzes[0m
+                [36m</label>[39m
+                [36m<div>[39m
+                  [36m<label[39m
+                    [33mclass[39m=[32m"form-label"[39m
+                  [36m>[39m
+                    [0mTotal Points: [0m
+                    [0m0[0m
+                  [36m</label>[39m
+                [36m</div>[39m
+                [36m<label[39m
+                  [33mclass[39m=[32m"form-label"[39m
+                [36m>[39m
+                  [0mSelect the Radio Button next to the quiz to view it.[0m
+                [36m</label>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"form-check"[39m
+                [36m>[39m
+                  [36m<input[39m
+                    [33mchecked[39m=[32m""[39m
+                    [33mclass[39m=[32m"form-check-input"[39m
+                    [33mid[39m=[32m"current-Quiz-First Quiz"[39m
+                    [33mname[39m=[32m"First Quiz"[39m
+                    [33mtype[39m=[32m"radio"[39m
+                    [33mvalue[39m=[32m"First Quiz"[39m
+                  [36m/>[39m
+                  [36m<label[39m
+                    [33mclass[39m=[32m"form-check-label"[39m
+                    [33mfor[39m=[32m"current-Quiz-First Quiz"[39m
+                    [33mtitle[39m=[32m""[39m
+                  [36m>[39m
+                    [36m<span[39m
+                      [33mdata-testid[39m=[32m"selected_Quiz"[39m
+                      [33mstyle[39m=[32m"background-color: paleturquoise; color: grey;"[39m
+                    [36m>[39m
+                      [0mQuiz title: [0m
+                      [0m [0m
+                      [0mFirst Quiz[0m
+                      [0m [0m
+                      [0m ...... [0m
+                      [0mDescription: [0m
+                      [0m [0m
+                      [0m This is the first quiz I made and it tests you on basic facts.[0m
+                      [0m ...... [0m
+                      [0mNumber of Questions : [0m
+                      [0m [0m
+                      [0m5[0m
+                      [36m<div>[39m
+                        [36m<div>[39m
+                          [36m<div>[39m
+                            [36m<button[39m
+                              [33mclass[39m=[32m"btn btn-primary"[39m
+                              [33mtype[39m=[32m"button"[39m
+                            [36m>[39m
+                              [0mStart Quiz[0m
+                              [0m [0m
+                            [36m</button>[39m
+                            [36m<div>[39m
+                              [0mQuestion: [0m
+                              [0mHow many Questions did this Quiz start out with?[0m
+                              [0m [0m
+                              [0m ...... [0m
+                              [0mQuestion Type: [0m
+                              [0mMultiple Choice[0m
+                              [0m [0m
+                              [0m ...... [0m
+                              [0mQuestion Points: [0m
+                              [0m ...... [0m
+                              [0m [0m
+                              [0m1[0m
+                            [36m</div>[39m
+                            [36m<div>[39m
+                              [0mQuestion: [0m
+                              [0mWhat Season is it[0m
+                              [0m [0m
+                              [0m ...... [0m
+                              [0mQuestion Type: [0m
+                              [0mMultiple Choice[0m
+                              [0m [0m
+                              [0m ...... [0m
+                              [0mQuestion Points: [0m
+                              [0m ...... [0m
+                              [0m [0m
+                              [0m1[0m
+                            [36m</div>[39m
+                            [36m<div>[39m
+                              [0mQuestion: [0m
+                              [0mHWhat year is it?[0m
+                              [0m [0m
+                              [0m ...... [0m
+                              [0mQuestion Type: [0m
+                              [0mMultiple Choice[0m
+                              [0m [0m
+                              [0m ...... [0m
+                              [0mQuestion Points: [0m
+                              [0m ...... [0m
+                              [0m [0m
+                              [0m1[0m
+                            [36m</div>[39m
+                            [36m<div>[39m
+                              [0mQuestion: [0m
+                              [0mWhat is the weirdest word?[0m
+                              [0m [0m
+                              [0m ...... [0m
+                              [0mQuestion Type: [0m
+                              [0mMultiple Choice[0m
+                              [0m [0m
+                              [0m ...... [0m
+                              [0mQuestion Points: [0m
+                              [0m ...... [0m
+                              [0m [0m
+                              [0m1[0m
+                            [36m</div>[39m
+                            [36m<div>[39m
+                              [0mQuestion: [0m
+                              [0mWaht is the Name of the person who created this Quiz[0m
+                              [0m [0m
+                              [0m ...... [0m
+                              [0mQuestion Type: [0m
+                              [0mShort Answer[0m
+                              [0m [0m
+                              [0m ...... [0m
+                              [0mQuestion Points: [0m
+                              [0m ...... [0m
+                              [0m [0m
+                              [0m3[0m
+                            [36m</div>[39m
+                          [36m</div>[39m
+                        [36m</div>[39m
+                      [36m</div>[39m
+                    [36m</span>[39m
+                  [36m</label>[39m
+                [36m</div>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"form-check"[39m
+                [36m>[39m
+                  [36m<input[39m
+                    [33mclass[39m=[32m"form-check-input"[39m
+                    [33mid[39m=[32m"current-Quiz-Second Quiz"[39m
+                    [33mname[39m=[32m"Second Quiz"[39m
+                    [33mtype[39m=[32m"radio"[39m
+                    [33mvalue[39m=[32m"Second Quiz"[39m
+                  [36m/>[39m
+                  [36m<label[39m
+                    [33mclass[39m=[32m"form-check-label"[39m
+                    [33mfor[39m=[32m"current-Quiz-Second Quiz"[39m
+                    [33mtitle[39m=[32m""[39m
+                  [36m>[39m
+                    [36m<span[39m
+                      [33mdata-testid[39m=[32m"selected_Quiz"[39m
+                      [33mstyle[39m=[32m"background-color: paleturquoise; color: grey;"[39m
+                    [36m>[39m
+                      [0mQuiz title: [0m
+                      [0m [0m
+                      [0mSecond Quiz[0m
+                      [0m [0m
+                      [0m ...... [0m
+                      [0mDescription: [0m
+                      [0m [0m
+                      [0m This is the second quiz. its contents are the same as the others[0m
+                      [0m ...... [0m
+                      [0mNumber of Questions : [0m
+                      [0m [0m
+                      [0m5[0m
+                      [0m [0m
+                    [36m</span>[39m
+                  [36m</label>[39m
+                [36m</div>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"form-check"[39m
+                [36m>[39m
+                  [36m<input[39m
+                    [33mclass[39m=[32m"form-check-input"[39m
+                    [33mid[39m=[32m"current-Quiz-ThirdQuiz"[39m
+                    [33mname[39m=[32m"ThirdQuiz"[39m
+                    [33mtype[39m=[32m"radio"[39m
+                    [33mvalue[39m=[32m"ThirdQuiz"[39m
+                  [36m/>[39m
+                  [36m<label[39m
+                    [33mclass[39m=[32m"form-check-label"[39m
+                    [33mfor[39m=[32m"current-Quiz-ThirdQuiz"[39m
+                    [33mtitle[39m=[32m""[39m
+                  [36m>[39m
+                    [36m<span[39m
+                      [33mdata-testid[39m=[32m"selected_Quiz"[39m
+                      [33mstyle[39m=[32m"background-color: paleturquoise; color: grey;"[39m
+                    [36m>[39m
+                      [0mQuiz title: [0m
+                      [0m [0m
+                      [0mThirdQuiz[0m
+                      [0m [0m
+                      [0m ...... [0m
+                      [0mDescription: [0m
+                      [0m [0m
+                      [0m this is the thrid quiz. it has a value of 10 points and the contents are the same as the other[0m
+                      [0m ...... [0m
+                      [0mNumber of Questions : [0m
+                      [0m [0m
+                      [0m5[0m
+                      [0m [0m
+                    [36m</span>[39m
+                  [36m</label>[39m
+                [36m</div>[39m
+              [36m</div>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</body>[39m
+
+      15 |         // Switch to first
+      16 |         radios[0].click();
+    > 17 |         const selectedQuiz = screen.getByTestId("current_Quiz");
+         |                                     ^
+      18 |         expect(selectedQuiz).toHaveTextContent("Quiz title:");
+      19 |         // // Switch to second
+      20 |         // radios[2].click();
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
+      at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
+      at getByTestId (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
+      at Object.<anonymous> (src/quizzer/QuizzerMode.test.tsx:17:37)
+
 PASS src/components/RevealAnswer.test.tsx
 PASS src/bad-components/ColoredBox.test.tsx
 PASS src/bad-components/ShoveBox.test.tsx
-FAIL src/quizzer/Quizzer.test.tsx
+FAIL src/quizzer/EditMode.test.tsx
   ● Test suite failed to run
 
     Your test suite must contain at least one test.
@@ -36,7 +300,7 @@ PASS src/App.test.tsx
 -----------------------------|---------|----------|---------|---------|-------------------
 File                         | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 -----------------------------|---------|----------|---------|---------|-------------------
-All files                    |   97.55 |    93.33 |   98.49 |    97.5 |                   
+All files                    |   94.08 |    89.23 |   93.46 |   93.98 |                   
  src                         |   98.95 |    97.22 |     100 |   98.93 |                   
   App.tsx                    |     100 |      100 |     100 |     100 |                   
   arrays.ts                  |   96.87 |    93.54 |     100 |   96.72 | 36,53             
@@ -65,12 +329,282 @@ All files                    |   97.55 |    93.33 |   98.49 |    97.5 |
  src/interfaces              |       0 |        0 |       0 |       0 |                   
   answer.ts                  |       0 |        0 |       0 |       0 |                   
   question.ts                |       0 |        0 |       0 |       0 |                   
- src/quizzer                 |      60 |       50 |      50 |      60 |                   
-  Quizzer.tsx                |      60 |       50 |      50 |      60 | 47,67             
+  quizzerQuestion.tsx        |       0 |        0 |       0 |       0 |                   
+ src/quizzer                 |      65 |    41.66 |   58.33 |      65 |                   
+  EditMode.tsx               |     100 |      100 |     100 |     100 |                   
+  OriginalQuizzes.tsx        |     100 |      100 |     100 |     100 |                   
+  Questions.tsx              |     100 |      100 |     100 |     100 |                   
+  Quizzer.tsx                |     100 |      100 |     100 |     100 |                   
+  QuizzerMode.tsx            |   68.18 |       50 |   61.53 |   68.18 | 95,115-130        
+  UpdateMultipleChoice.tsx   |       0 |        0 |       0 |       0 | 15-26             
+  UpdateShortAnswer.tsx      |       0 |        0 |       0 |       0 | 15-20             
 -----------------------------|---------|----------|---------|---------|-------------------
 
 Summary of all failing tests
-FAIL src/quizzer/Quizzer.test.tsx
+FAIL src/quizzer/QuizzerMode.test.tsx
+  ● Quizzer Tests › Swiching the Quizzes displays the Displayed Quiz
+
+    TestingLibraryElementError: Unable to find an element by: [data-testid="current_Quiz"]
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<body>[39m
+      [36m<div>[39m
+        [36m<div>[39m
+          [36m<h3>[39m
+            [0mQuizzer[0m
+          [36m</h3>[39m
+          [36m<div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"form-check form-switch"[39m
+            [36m>[39m
+              [36m<input[39m
+                [33mclass[39m=[32m"form-check-input"[39m
+                [33mid[39m=[32m"edit-mode-or-quizzer-mode"[39m
+                [33mtype[39m=[32m"checkbox"[39m
+              [36m/>[39m
+              [36m<label[39m
+                [33mclass[39m=[32m"form-check-label"[39m
+                [33mfor[39m=[32m"edit-mode-or-quizzer-mode"[39m
+                [33mtitle[39m=[32m""[39m
+              [36m>[39m
+                [0mSwap Modes[0m
+              [36m</label>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+          [36m<div>[39m
+            [36m<div>[39m
+              [36m<div>[39m
+                [0mQuizzer Mode[0m
+              [36m</div>[39m
+              [36m<div>[39m
+                [36m<label[39m
+                  [33mclass[39m=[32m"form-label"[39m
+                [36m>[39m
+                  [0mYour Quizzes[0m
+                [36m</label>[39m
+                [36m<div>[39m
+                  [36m<label[39m
+                    [33mclass[39m=[32m"form-label"[39m
+                  [36m>[39m
+                    [0mTotal Points: [0m
+                    [0m0[0m
+                  [36m</label>[39m
+                [36m</div>[39m
+                [36m<label[39m
+                  [33mclass[39m=[32m"form-label"[39m
+                [36m>[39m
+                  [0mSelect the Radio Button next to the quiz to view it.[0m
+                [36m</label>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"form-check"[39m
+                [36m>[39m
+                  [36m<input[39m
+                    [33mchecked[39m=[32m""[39m
+                    [33mclass[39m=[32m"form-check-input"[39m
+                    [33mid[39m=[32m"current-Quiz-First Quiz"[39m
+                    [33mname[39m=[32m"First Quiz"[39m
+                    [33mtype[39m=[32m"radio"[39m
+                    [33mvalue[39m=[32m"First Quiz"[39m
+                  [36m/>[39m
+                  [36m<label[39m
+                    [33mclass[39m=[32m"form-check-label"[39m
+                    [33mfor[39m=[32m"current-Quiz-First Quiz"[39m
+                    [33mtitle[39m=[32m""[39m
+                  [36m>[39m
+                    [36m<span[39m
+                      [33mdata-testid[39m=[32m"selected_Quiz"[39m
+                      [33mstyle[39m=[32m"background-color: paleturquoise; color: grey;"[39m
+                    [36m>[39m
+                      [0mQuiz title: [0m
+                      [0m [0m
+                      [0mFirst Quiz[0m
+                      [0m [0m
+                      [0m ...... [0m
+                      [0mDescription: [0m
+                      [0m [0m
+                      [0m This is the first quiz I made and it tests you on basic facts.[0m
+                      [0m ...... [0m
+                      [0mNumber of Questions : [0m
+                      [0m [0m
+                      [0m5[0m
+                      [36m<div>[39m
+                        [36m<div>[39m
+                          [36m<div>[39m
+                            [36m<button[39m
+                              [33mclass[39m=[32m"btn btn-primary"[39m
+                              [33mtype[39m=[32m"button"[39m
+                            [36m>[39m
+                              [0mStart Quiz[0m
+                              [0m [0m
+                            [36m</button>[39m
+                            [36m<div>[39m
+                              [0mQuestion: [0m
+                              [0mHow many Questions did this Quiz start out with?[0m
+                              [0m [0m
+                              [0m ...... [0m
+                              [0mQuestion Type: [0m
+                              [0mMultiple Choice[0m
+                              [0m [0m
+                              [0m ...... [0m
+                              [0mQuestion Points: [0m
+                              [0m ...... [0m
+                              [0m [0m
+                              [0m1[0m
+                            [36m</div>[39m
+                            [36m<div>[39m
+                              [0mQuestion: [0m
+                              [0mWhat Season is it[0m
+                              [0m [0m
+                              [0m ...... [0m
+                              [0mQuestion Type: [0m
+                              [0mMultiple Choice[0m
+                              [0m [0m
+                              [0m ...... [0m
+                              [0mQuestion Points: [0m
+                              [0m ...... [0m
+                              [0m [0m
+                              [0m1[0m
+                            [36m</div>[39m
+                            [36m<div>[39m
+                              [0mQuestion: [0m
+                              [0mHWhat year is it?[0m
+                              [0m [0m
+                              [0m ...... [0m
+                              [0mQuestion Type: [0m
+                              [0mMultiple Choice[0m
+                              [0m [0m
+                              [0m ...... [0m
+                              [0mQuestion Points: [0m
+                              [0m ...... [0m
+                              [0m [0m
+                              [0m1[0m
+                            [36m</div>[39m
+                            [36m<div>[39m
+                              [0mQuestion: [0m
+                              [0mWhat is the weirdest word?[0m
+                              [0m [0m
+                              [0m ...... [0m
+                              [0mQuestion Type: [0m
+                              [0mMultiple Choice[0m
+                              [0m [0m
+                              [0m ...... [0m
+                              [0mQuestion Points: [0m
+                              [0m ...... [0m
+                              [0m [0m
+                              [0m1[0m
+                            [36m</div>[39m
+                            [36m<div>[39m
+                              [0mQuestion: [0m
+                              [0mWaht is the Name of the person who created this Quiz[0m
+                              [0m [0m
+                              [0m ...... [0m
+                              [0mQuestion Type: [0m
+                              [0mShort Answer[0m
+                              [0m [0m
+                              [0m ...... [0m
+                              [0mQuestion Points: [0m
+                              [0m ...... [0m
+                              [0m [0m
+                              [0m3[0m
+                            [36m</div>[39m
+                          [36m</div>[39m
+                        [36m</div>[39m
+                      [36m</div>[39m
+                    [36m</span>[39m
+                  [36m</label>[39m
+                [36m</div>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"form-check"[39m
+                [36m>[39m
+                  [36m<input[39m
+                    [33mclass[39m=[32m"form-check-input"[39m
+                    [33mid[39m=[32m"current-Quiz-Second Quiz"[39m
+                    [33mname[39m=[32m"Second Quiz"[39m
+                    [33mtype[39m=[32m"radio"[39m
+                    [33mvalue[39m=[32m"Second Quiz"[39m
+                  [36m/>[39m
+                  [36m<label[39m
+                    [33mclass[39m=[32m"form-check-label"[39m
+                    [33mfor[39m=[32m"current-Quiz-Second Quiz"[39m
+                    [33mtitle[39m=[32m""[39m
+                  [36m>[39m
+                    [36m<span[39m
+                      [33mdata-testid[39m=[32m"selected_Quiz"[39m
+                      [33mstyle[39m=[32m"background-color: paleturquoise; color: grey;"[39m
+                    [36m>[39m
+                      [0mQuiz title: [0m
+                      [0m [0m
+                      [0mSecond Quiz[0m
+                      [0m [0m
+                      [0m ...... [0m
+                      [0mDescription: [0m
+                      [0m [0m
+                      [0m This is the second quiz. its contents are the same as the others[0m
+                      [0m ...... [0m
+                      [0mNumber of Questions : [0m
+                      [0m [0m
+                      [0m5[0m
+                      [0m [0m
+                    [36m</span>[39m
+                  [36m</label>[39m
+                [36m</div>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"form-check"[39m
+                [36m>[39m
+                  [36m<input[39m
+                    [33mclass[39m=[32m"form-check-input"[39m
+                    [33mid[39m=[32m"current-Quiz-ThirdQuiz"[39m
+                    [33mname[39m=[32m"ThirdQuiz"[39m
+                    [33mtype[39m=[32m"radio"[39m
+                    [33mvalue[39m=[32m"ThirdQuiz"[39m
+                  [36m/>[39m
+                  [36m<label[39m
+                    [33mclass[39m=[32m"form-check-label"[39m
+                    [33mfor[39m=[32m"current-Quiz-ThirdQuiz"[39m
+                    [33mtitle[39m=[32m""[39m
+                  [36m>[39m
+                    [36m<span[39m
+                      [33mdata-testid[39m=[32m"selected_Quiz"[39m
+                      [33mstyle[39m=[32m"background-color: paleturquoise; color: grey;"[39m
+                    [36m>[39m
+                      [0mQuiz title: [0m
+                      [0m [0m
+                      [0mThirdQuiz[0m
+                      [0m [0m
+                      [0m ...... [0m
+                      [0mDescription: [0m
+                      [0m [0m
+                      [0m this is the thrid quiz. it has a value of 10 points and the contents are the same as the other[0m
+                      [0m ...... [0m
+                      [0mNumber of Questions : [0m
+                      [0m [0m
+                      [0m5[0m
+                      [0m [0m
+                    [36m</span>[39m
+                  [36m</label>[39m
+                [36m</div>[39m
+              [36m</div>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</body>[39m
+
+      15 |         // Switch to first
+      16 |         radios[0].click();
+    > 17 |         const selectedQuiz = screen.getByTestId("current_Quiz");
+         |                                     ^
+      18 |         expect(selectedQuiz).toHaveTextContent("Quiz title:");
+      19 |         // // Switch to second
+      20 |         // radios[2].click();
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
+      at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
+      at getByTestId (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
+      at Object.<anonymous> (src/quizzer/QuizzerMode.test.tsx:17:37)
+
+FAIL src/quizzer/EditMode.test.tsx
   ● Test suite failed to run
 
     Your test suite must contain at least one test.
@@ -82,8 +616,8 @@ FAIL src/quizzer/Quizzer.test.tsx
       at Emittery.emit (node_modules/emittery/index.js:258:23)
 
 
-Test Suites: 1 failed, 20 passed, 21 total
-Tests:       133 passed, 133 total
+Test Suites: 2 failed, 21 passed, 23 total
+Tests:       1 failed, 139 passed, 140 total
 Snapshots:   0 total
-Time:        14.719 s
+Time:        16.393 s
 Ran all test suites.
