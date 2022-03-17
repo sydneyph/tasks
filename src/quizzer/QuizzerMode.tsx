@@ -25,7 +25,9 @@ export function QuizzerMode(): JSX.Element {
         return (
             <div>
                 <Form.Label>Your Quizzes</Form.Label>
-                <Form.Label>Total Points: {totalPoints}</Form.Label>
+                <div>
+                    <Form.Label>Total Points: {totalPoints}</Form.Label>
+                </div>
                 <Form.Label>
                     Select the Radio Button next to the quiz to view it.
                 </Form.Label>
@@ -123,7 +125,10 @@ export function QuizzerMode(): JSX.Element {
                     Stop Quiz
                 </Button>
                 {currentQuizQuestions.map((currentQuestion: Question) => (
-                    <div key={currentQuestion.name} style={{ color: "black" }}>
+                    <div
+                        key={currentQuestion.name}
+                        style={{ color: "midnightblue" }}
+                    >
                         Question: {currentQuestion.name} {" ...... "}
                         Question Type: {currentQuestion.body} {" ...... "}
                         Question Points: {" ...... "} {currentQuestion.points}
@@ -152,7 +157,7 @@ export function QuizzerMode(): JSX.Element {
         */
     return (
         <div>
-            <div>establish QuizzerMode</div>
+            <div>Quizzer Mode</div>
             <PrintQuizzes />
             {/** Placing a map here that constins a list of questions which wil generate into Quizzer mode layout */}
             {/** Each of these will print in a little thing that satisfies above element and constin a button that says view quiz*/}

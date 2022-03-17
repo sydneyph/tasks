@@ -12,8 +12,8 @@ export function EditorMode(): JSX.Element {
         */
     return (
         <div>
-            <Button>Editing Mode</Button>
-            <div>establish Editing mode</div>
+            <div>Edit mode</div>
+            <Button>Hurrah! You are In Editing Mode</Button>
             {/** Placing a map here that constins a list of questions which wil generate into Quizzer mode layout */}
             {/** You can select delete quiz by pressing button. you can edit quiz by selecting a button*/}
             {/** You can play around with setting of individual questions as explained above using various buttons and interfaces*/}
