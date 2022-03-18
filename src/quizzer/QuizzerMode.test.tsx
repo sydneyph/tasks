@@ -48,22 +48,7 @@ describe("Quizzer Tests", () => {
             )
         ).toBeInTheDocument();
     });
-
-    test("Making sure the we can switch between radio buttons and the correct quiz is shown", () => {
-        // Switch to second
-        const radios: HTMLInputElement[] = screen.getAllByRole("radio");
-        radios[0].click();
-        expect(
-            screen.getByText(/Quiz title: Second Quiz/i)
-        ).toBeInTheDocument();
-        radios[1].click();
-        expect(
-            screen.getByText(
-                /Question: How many moons does the planet earth have?/i
-            )
-        ).toBeInTheDocument();
-    });
-    // for these next few tests I am making sure that my Update Multiple Choice and Short answer functions are working. Options taken from Original Quizzes.
+    // for these next few tests I am making sure that my Update Multiple Choice and Short answer functions are working. Options are basic examples used to prove the point.
     test("The answer for the first Question is initially correct", () => {
         render(
             <CheckMultipleChoice expectedAnswer="2" options={["1", "2", "3"]} />

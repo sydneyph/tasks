@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
+import { isConstructorDeclaration } from "typescript";
 import { Question, Quiz } from "../interfaces/quizzerQuestion";
 // planning on storing initial quizzes and questions
 import { listOfQuizzes } from "./OriginalQuizzes";
@@ -72,6 +73,7 @@ export function QuizzerMode(): JSX.Element {
 
     function viewQuiz(): JSX.Element {
         // Handles showing the viewing quiz and the taking quiz
+        console.log(selectedQuizName);
         return (
             <div>
                 <div>
@@ -89,7 +91,9 @@ export function QuizzerMode(): JSX.Element {
                 currentQuiz.name === selectedQuizName
         );
         const currentQuizQuestions = currentQuizArr[0].quizQuestions;
-
+        console.log(
+            "inside Viewing Quiz. CurrentQuiz" + currentQuizArr[0].name
+        );
         return (
             <div>
                 <Button
@@ -115,10 +119,10 @@ export function QuizzerMode(): JSX.Element {
         //need a button to stop the quiz. will tally points and set quiz active to true
         const currentQuizArr = listOfQuizzes.filter(
             (currentQuiz: Quiz): boolean =>
-                currentQuiz.name !== selectedQuizName
+                currentQuiz.name === selectedQuizName
         );
         const currentQuizQuestions = currentQuizArr[0].quizQuestions;
-
+        console.log("inside Taking Quiz. CurrentQuiz" + currentQuizArr[0].name);
         return (
             <div>
                 <Button
