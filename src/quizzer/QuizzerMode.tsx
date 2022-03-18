@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
+import { isConstructorDeclaration } from "typescript";
 import { Question, Quiz } from "../interfaces/quizzerQuestion";
 // planning on storing initial quizzes and questions
-import { Quiz1, Quiz2, Quiz3 } from "./OriginalQuizzes";
+import { listOfQuizzes } from "./OriginalQuizzes";
 import { CheckMultipleChoice } from "./UpdateMultipleChoice";
 import { CheckShortAnswer } from "./UpdateShortAnswer";
 
 export function QuizzerMode(): JSX.Element {
     // list of all quizzes make into let
-    const listOfQuizzes = [Quiz1, Quiz2, Quiz3];
 
     const [selectedQuizName, updateSelectedQuizName] = useState<string>();
 
@@ -62,7 +62,9 @@ export function QuizzerMode(): JSX.Element {
                         value={currentQuiz.name}
                         checked={currentQuiz.name === selectedQuizName}
                         //our ability to swich quizzes stops if we are currently taking another quiz
-                        disabled={quizActive}
+                        disabled={
+                            quizActive && currentQuiz.name !== selectedQuizName
+                        }
                     />
                 ))}
             </div>
@@ -71,6 +73,7 @@ export function QuizzerMode(): JSX.Element {
 
     function viewQuiz(): JSX.Element {
         // Handles showing the viewing quiz and the taking quiz
+        console.log(selectedQuizName);
         return (
             <div>
                 <div>
@@ -85,10 +88,12 @@ export function QuizzerMode(): JSX.Element {
         // this functions prints more info about the quiz including the questions names, bodies and points
         const currentQuizArr = listOfQuizzes.filter(
             (currentQuiz: Quiz): boolean =>
-                currentQuiz.name !== selectedQuizName
+                currentQuiz.name === selectedQuizName
         );
         const currentQuizQuestions = currentQuizArr[0].quizQuestions;
-
+        console.log(
+            "inside Viewing Quiz. CurrentQuiz" + currentQuizArr[0].name
+        );
         return (
             <div>
                 <Button
@@ -114,10 +119,10 @@ export function QuizzerMode(): JSX.Element {
         //need a button to stop the quiz. will tally points and set quiz active to true
         const currentQuizArr = listOfQuizzes.filter(
             (currentQuiz: Quiz): boolean =>
-                currentQuiz.name !== selectedQuizName
+                currentQuiz.name === selectedQuizName
         );
         const currentQuizQuestions = currentQuizArr[0].quizQuestions;
-
+        console.log("inside Taking Quiz. CurrentQuiz" + currentQuizArr[0].name);
         return (
             <div>
                 <Button
