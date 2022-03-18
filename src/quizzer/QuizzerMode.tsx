@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
-import { isConstructorDeclaration } from "typescript";
 import { Question, Quiz } from "../interfaces/quizzerQuestion";
 // planning on storing initial quizzes and questions
 import { listOfQuizzes } from "./OriginalQuizzes";
