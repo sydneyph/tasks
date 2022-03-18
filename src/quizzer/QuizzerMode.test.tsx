@@ -14,18 +14,17 @@ describe("Quizzer Tests", () => {
         // Add more tests, more components, more test files!
     });
     test("Making sure all of our Intiial Quizzes are Displayed", () => {
-        //const listOfQuizzes = [Quiz1, Quiz2, Quiz3]; THese are the quizzes we are using in this test to make sure everything is all set
-        const radios: HTMLInputElement[] = screen.getAllByRole("radio");
-        // Switch to first
-        radios[0].click();
-        expect(screen.getByText(/Quiz Title: First Quiz/i)).toBeInTheDocument();
-        // Switch to second
-        radios[2].click();
+        // First Quiz Visible
         expect(
-            screen.getByText(/Quiz Title: Second Quiz/i)
+            screen.getByText(/Quiz title: Second Quiz/i)
         ).toBeInTheDocument();
-        // Switch to third
-        radios[2].click();
+        // Second Quiz Visible
+        expect(
+            screen.getByText(/Quiz title: Fourth Quiz/i)
+        ).toBeInTheDocument();
+        // Third Quiz Visible
+        expect(screen.getByText(/Quiz Title: Third Quiz/i)).toBeInTheDocument();
+        // Fourth Quiz Visible
         expect(screen.getByText(/Quiz Title: Third Quiz/i)).toBeInTheDocument();
     });
     test("Making sure the correct question display when clicking on the first Radio Button", () => {
@@ -39,23 +38,13 @@ describe("Quizzer Tests", () => {
             )
         ).toBeInTheDocument();
     });
-    test("Making sure the correct question display when clicking on the second radio button", () => {
+    test("Making sure the correct question display when clicking on the third radio button", () => {
         // Switch to second
         const radios: HTMLInputElement[] = screen.getAllByRole("radio");
         radios[1].click();
         expect(
             screen.getByText(
-                /Question: How many Questions did this Quiz start out with?/i
-            )
-        ).toBeInTheDocument();
-    });
-    test("Making sure the correct question display when clicking on the third radio button", () => {
-        // Switch to second
-        const radios: HTMLInputElement[] = screen.getAllByRole("radio");
-        radios[2].click();
-        expect(
-            screen.getByText(
-                /Question: How many Questions did this Quiz start out with?/i
+                /Question: How many moons does the planet earth have?/i
             )
         ).toBeInTheDocument();
     });
@@ -63,16 +52,14 @@ describe("Quizzer Tests", () => {
     test("Making sure the we can switch between radio buttons and the correct quiz is shown", () => {
         // Switch to second
         const radios: HTMLInputElement[] = screen.getAllByRole("radio");
+        radios[0].click();
+        expect(
+            screen.getByText(/Quiz title: Second Quiz/i)
+        ).toBeInTheDocument();
         radios[1].click();
         expect(
             screen.getByText(
-                /Question: How many Questions did this Quiz start out with?/i
-            )
-        ).toBeInTheDocument();
-        radios[2].click();
-        expect(
-            screen.getByText(
-                /Question: How many Questions did this Quiz start out with?/i
+                /Question: How many moons does the planet earth have?/i
             )
         ).toBeInTheDocument();
     });

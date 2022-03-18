@@ -56,19 +56,6 @@ export const Quiz2Questions = [
         "multiple_choice_question",
         ["2010", "2020", "2022", "2024"],
         "2024"
-    ),
-    makeMultipleChoice(
-        4,
-        "What is the weirdest word?",
-        "multiple_choice_question",
-        ["YEYEY", "weiurg owe", "wekjb    oew", "askdjfbqkrb"],
-        "askdjfbqkrb"
-    ),
-    makeShortAnswer(
-        5,
-        "Waht is the Name of the person who created this Quiz",
-        "multiple_choice_question",
-        "Sydney"
     )
 ];
 export const Quiz4Questions = [
@@ -137,4 +124,4 @@ export const Quiz4 = makeQuiz(
     Quiz4Questions
 );
 
-export const listOfQuizzes = [Quiz1, Quiz2, Quiz3, Quiz4];
+export const listOfQuizzes = [Quiz2, Quiz4, Quiz3, Quiz1];

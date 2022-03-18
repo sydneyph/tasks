@@ -88,7 +88,6 @@ export function QuizzerMode(): JSX.Element {
             (currentQuiz: Quiz): boolean =>
                 currentQuiz.name === selectedQuizName
         );
-        console.log(selectedQuizName);
         const currentQuizQuestions = currentQuizArr[0].quizQuestions;
 
         return (
