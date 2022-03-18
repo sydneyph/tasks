@@ -62,7 +62,9 @@ export function QuizzerMode(): JSX.Element {
                         value={currentQuiz.name}
                         checked={currentQuiz.name === selectedQuizName}
                         //our ability to swich quizzes stops if we are currently taking another quiz
-                        disabled={quizActive}
+                        disabled={
+                            quizActive && currentQuiz.name !== selectedQuizName
+                        }
                     />
                 ))}
             </div>
