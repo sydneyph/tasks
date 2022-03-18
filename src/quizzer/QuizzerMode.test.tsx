@@ -59,6 +59,23 @@ describe("Quizzer Tests", () => {
             )
         ).toBeInTheDocument();
     });
+
+    test("Making sure the we can switch between radio buttons and the correct quiz is shown", () => {
+        // Switch to second
+        const radios: HTMLInputElement[] = screen.getAllByRole("radio");
+        radios[1].click();
+        expect(
+            screen.getByText(
+                /Question: How many Questions did this Quiz start out with?/i
+            )
+        ).toBeInTheDocument();
+        radios[2].click();
+        expect(
+            screen.getByText(
+                /Question: How many Questions did this Quiz start out with?/i
+            )
+        ).toBeInTheDocument();
+    });
     // for these next few tests I am making sure that my Update Multiple Choice and Short answer functions are working. Options taken from Original Quizzes.
     test("The answer for the first Question is initially correct", () => {
         render(

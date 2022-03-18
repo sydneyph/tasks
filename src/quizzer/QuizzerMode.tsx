@@ -2,13 +2,12 @@ import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import { Question, Quiz } from "../interfaces/quizzerQuestion";
 // planning on storing initial quizzes and questions
-import { Quiz1, Quiz2, Quiz3 } from "./OriginalQuizzes";
+import { listOfQuizzes } from "./OriginalQuizzes";
 import { CheckMultipleChoice } from "./UpdateMultipleChoice";
 import { CheckShortAnswer } from "./UpdateShortAnswer";
 
 export function QuizzerMode(): JSX.Element {
     // list of all quizzes make into let
-    const listOfQuizzes = [Quiz1, Quiz2, Quiz3];
 
     const [selectedQuizName, updateSelectedQuizName] = useState<string>();
 
@@ -87,8 +86,9 @@ export function QuizzerMode(): JSX.Element {
         // this functions prints more info about the quiz including the questions names, bodies and points
         const currentQuizArr = listOfQuizzes.filter(
             (currentQuiz: Quiz): boolean =>
-                currentQuiz.name !== selectedQuizName
+                currentQuiz.name === selectedQuizName
         );
+        console.log(selectedQuizName);
         const currentQuizQuestions = currentQuizArr[0].quizQuestions;
 
         return (

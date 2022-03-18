@@ -37,12 +37,11 @@ export const Quiz1Questions = [
     )
 ];
 export const Quiz2Questions = [
-    makeMultipleChoice(
+    makeShortAnswer(
         1,
         "What is the numerical number for the word one?",
-        "multiple_choice_question",
-        ["a. 1", "b. 3", "c. 5", "d. 7"],
-        "a. 1"
+        "short_answer_question",
+        "JAJAJ"
     ),
     makeMultipleChoice(
         2,
@@ -72,12 +71,12 @@ export const Quiz2Questions = [
         "Sydney"
     )
 ];
-export const Quiz3Questions = [
+export const Quiz4Questions = [
     makeMultipleChoice(
         1,
         "How many moons does the planet earth have?",
         "multiple_choice_question",
-        ["a. 1", "b. 3", "c. 5", "d. 7"],
+        ["a. 1", "b. 3", "c. 2504", "d. 124"],
         "a. 1"
     ),
     makeMultipleChoice(
@@ -96,9 +95,9 @@ export const Quiz3Questions = [
     ),
     makeMultipleChoice(
         4,
-        "What is the weirdest word?",
+        "How am i tkaing this",
         "multiple_choice_question",
-        ["YEYEY", "weiurg owe", "wekjb    oew", "askdjfbqkrb"],
+        ["ank", "askdjfbqkrb"],
         "askdjfbqkrb"
     ),
     makeShortAnswer(
@@ -129,5 +128,13 @@ export const Quiz3 = makeQuiz(
     "Third Quiz",
     " this is the thrid quiz. it has a value of 10 points and the contents are the same as the other",
     10,
-    Quiz3Questions
+    []
 );
+export const Quiz4 = makeQuiz(
+    "Fourth Quiz",
+    " this is the fourth quiz. it has a value of 10 points and the contents are the same as the other",
+    10,
+    Quiz4Questions
+);
+
+export const listOfQuizzes = [Quiz1, Quiz2, Quiz3, Quiz4];
