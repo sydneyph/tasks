@@ -120,5 +120,5 @@ FAIL src/quizzer/EditMode.test.tsx
 Test Suites: 1 failed, 22 passed, 23 total
 Tests:       146 passed, 146 total
 Snapshots:   0 total
-Time:        16.148 s
+Time:        14.107 s
 Ran all test suites.
