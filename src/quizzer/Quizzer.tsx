@@ -24,6 +24,7 @@ export function Quizzer(): JSX.Element {
             </div>
             {/* here we are able to swap between the editing interface and the quizzer interface*/}
             <div>{isEditing ? <EditorMode /> : <QuizzerMode />}</div>
+            <img src="IMG_1368.jpg" />
         </div>
     );
 }
